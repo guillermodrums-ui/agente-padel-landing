@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SAQUE — O agente de IA que arruma as duplas do seu clube de padel</title>
-<meta name="description" content="O primeiro agente de IA que arruma duplas pelos grupos do WhatsApp do seu clube de padel. Reservas, sinal no Pix, lista de espera e atendimento 24/7. Sem app extra." />
+<title data-i18n="meta.title">SAQUE — O agente de IA que arruma as duplas do seu clube de padel</title>
+<meta name="description" data-i18n-attr-content="meta.description" content="O primeiro agente de IA que arruma duplas pelos grupos do WhatsApp do seu clube de padel. Reservas, sinal no Pix, lista de espera e atendimento 24/7. Sem app extra." />
 <meta name="theme-color" content="#0A0A0A" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="SAQUE — Seu clube. Seus clientes. Seu WhatsApp." />
-<meta property="og:description" content="O agente de IA que ARRUMA dupla sozinho no WhatsApp do seu clube de padel. 24/7." />
-<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" data-i18n-attr-content="meta.og.title" content="SAQUE — Seu clube. Seus clientes. Seu WhatsApp." />
+<meta property="og:description" data-i18n-attr-content="meta.og.description" content="O agente de IA que ARRUMA dupla sozinho no WhatsApp do seu clube de padel. 24/7." />
+<meta property="og:locale" data-i18n-attr-content="meta.og.locale" content="pt_BR" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,6 +73,17 @@
   nav .cta:hover{transform:translateY(-1px)}
   @media (max-width:720px){nav{padding:14px 18px} nav .status{display:none} nav .logo{font-size:20px}}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+
+  /* LANGUAGE TOGGLE */
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .lang-toggle{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.03)}
+  .lang-toggle .lang-btn{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;padding:7px 13px;color:var(--mute);text-transform:uppercase;line-height:1;transition:background .2s ease,color .2s ease}
+  .lang-toggle .lang-btn[aria-pressed="true"]{background:var(--acc);color:#000;font-weight:700}
+  @media (hover:hover) and (pointer:fine){
+    .lang-toggle .lang-btn:hover{color:var(--ink)}
+    .lang-toggle .lang-btn[aria-pressed="true"]:hover{color:#000}
+  }
+  @media (max-width:720px){.nav-right{gap:10px}}
 
   /* HERO */
   .hero{position:relative;min-height:100vh;padding:140px 0 80px;overflow:hidden}
@@ -369,9 +380,15 @@
 
 <!-- NAV -->
 <nav role="navigation" aria-label="Principal">
-  <a href="#" class="logo" aria-label="Saque, página inicial"><span class="dot"></span>SAQUE</a>
-  <div class="status" aria-hidden="true"><span class="pulse"></span><span>SISTEMA ONLINE · v0.9 PILOTO</span></div>
-  <a href="#form" class="cta">ENTRAR NA LISTA <span aria-hidden="true">→</span></a>
+  <a href="#" class="logo" data-i18n-attr-aria-label="nav.logo.aria" aria-label="Saque, página inicial"><span class="dot"></span>SAQUE</a>
+  <div class="nav-right">
+    <div class="status" aria-hidden="true"><span class="pulse"></span><span>SISTEMA ONLINE · v0.9 PILOTO</span></div>
+    <div class="lang-toggle" role="group" data-i18n-attr-aria-label="nav.lang.aria" aria-label="Selecionar idioma">
+      <button type="button" class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a href="#form" class="cta"><span data-i18n="nav.cta">ENTRAR NA LISTA</span> <span aria-hidden="true">→</span></a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -381,39 +398,39 @@
   </svg>
   <div class="wrap hero-inner">
     <div class="badge reveal" role="note">
-      <span class="num">10</span>
-      <span>VAGAS · CLUBES PILOTO · BRASIL</span>
+      <span class="num" data-i18n="hero.badge.num">10</span>
+      <span data-i18n="hero.badge.label">VAGAS · CLUBES PILOTO · BRASIL</span>
     </div>
 
     <h1 class="display" style="margin-top:32px">
-      <span class="line reveal"><span>SEU CLUBE.</span></span>
-      <span class="line reveal d1"><span>SEUS <em>CLIENTES</em>.</span></span>
-      <span class="line reveal d2"><span>SEU WHATSAPP.</span></span>
+      <span class="line reveal"><span data-i18n="hero.h1.l1">SEU CLUBE.</span></span>
+      <span class="line reveal d1"><span data-i18n-html="hero.h1.l2">SEUS <em>CLIENTES</em>.</span></span>
+      <span class="line reveal d2"><span data-i18n="hero.h1.l3">SEU WHATSAPP.</span></span>
     </h1>
 
     <div class="hero-meta">
       <div>
-        <p class="hero-sub reveal d2">
+        <p class="hero-sub reveal d2" data-i18n-html="hero.sub">
           O <span class="hi">primeiro</span> agente de IA que <strong>ARRUMA as duplas</strong> dos seus jogadores. Sozinho. No WhatsApp. <strong>24 horas por dia.</strong>
         </p>
         <div class="hero-actions reveal d3">
-          <a href="#form" class="btn-primary">QUERO ENTRAR NA LISTA <span class="arrow" aria-hidden="true"></span></a>
-          <a href="#agente" class="btn-ghost">VER COMO ELE ARRUMA DUPLA</a>
+          <a href="#form" class="btn-primary"><span data-i18n="hero.btn.primary">QUERO ENTRAR NA LISTA</span> <span class="arrow" aria-hidden="true"></span></a>
+          <a href="#agente" class="btn-ghost" data-i18n="hero.btn.ghost">VER COMO ELE ARRUMA DUPLA</a>
         </div>
       </div>
 
       <div class="hero-stats reveal d3">
         <div class="stat-row">
           <div class="k"><em>24</em>/7</div>
-          <div class="v">ATENDE NO DOMINGO ÀS 23H. SEM RECLAMAR.</div>
+          <div class="v" data-i18n="hero.stat1.v">ATENDE NO DOMINGO ÀS 23H. SEM RECLAMAR.</div>
         </div>
         <div class="stat-row">
           <div class="k">0<em>%</em></div>
-          <div class="v">COMISSÃO POR RESERVA. O CLIENTE É SEU.</div>
+          <div class="v" data-i18n="hero.stat2.v">COMISSÃO POR RESERVA. O CLIENTE É SEU.</div>
         </div>
         <div class="stat-row">
           <div class="k"><em>+30</em>%</div>
-          <div class="v">META DE OCUPAÇÃO EM HORÁRIOS MORTOS.</div>
+          <div class="v" data-i18n="hero.stat3.v">META DE OCUPAÇÃO EM HORÁRIOS MORTOS.</div>
         </div>
       </div>
     </div>
@@ -423,17 +440,17 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">BUSCA DUPLA NO GRUPO <span class="marquee-dot"></span></span>
-    <span class="marquee-item alt">COBRA SINAL NO PIX <span class="marquee-dot"></span></span>
-    <span class="marquee-item">CONHECE CADA JOGADOR <span class="marquee-dot"></span></span>
-    <span class="marquee-item alt">FECHA PARTIDA SOZINHO <span class="marquee-dot"></span></span>
-    <span class="marquee-item">SEM APP EXTRA <span class="marquee-dot"></span></span>
+    <span class="marquee-item"><span data-i18n="marquee.item1">BUSCA DUPLA NO GRUPO</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item alt"><span data-i18n="marquee.item2">COBRA SINAL NO PIX</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item"><span data-i18n="marquee.item3">CONHECE CADA JOGADOR</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item alt"><span data-i18n="marquee.item4">FECHA PARTIDA SOZINHO</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item"><span data-i18n="marquee.item5">SEM APP EXTRA</span> <span class="marquee-dot"></span></span>
     <span class="marquee-item alt">24/7 <span class="marquee-dot"></span></span>
-    <span class="marquee-item">BUSCA DUPLA NO GRUPO <span class="marquee-dot"></span></span>
-    <span class="marquee-item alt">COBRA SINAL NO PIX <span class="marquee-dot"></span></span>
-    <span class="marquee-item">CONHECE CADA JOGADOR <span class="marquee-dot"></span></span>
-    <span class="marquee-item alt">FECHA PARTIDA SOZINHO <span class="marquee-dot"></span></span>
-    <span class="marquee-item">SEM APP EXTRA <span class="marquee-dot"></span></span>
+    <span class="marquee-item"><span data-i18n="marquee.item1">BUSCA DUPLA NO GRUPO</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item alt"><span data-i18n="marquee.item2">COBRA SINAL NO PIX</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item"><span data-i18n="marquee.item3">CONHECE CADA JOGADOR</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item alt"><span data-i18n="marquee.item4">FECHA PARTIDA SOZINHO</span> <span class="marquee-dot"></span></span>
+    <span class="marquee-item"><span data-i18n="marquee.item5">SEM APP EXTRA</span> <span class="marquee-dot"></span></span>
     <span class="marquee-item alt">24/7 <span class="marquee-dot"></span></span>
   </div>
 </div>
@@ -443,24 +460,24 @@
   <div class="wrap">
     <div class="section-head">
       <div class="num reveal">[ 02 / PROBLEMA ]</div>
-      <h2 id="problema-title" class="reveal d1">VOCÊ É DONO DO CLUBE.<br>MAS É DONO DOS <em>CLIENTES?</em></h2>
+      <h2 id="problema-title" class="reveal d1" data-i18n-html="problem.title">VOCÊ É DONO DO CLUBE.<br>MAS É DONO DOS <em>CLIENTES?</em></h2>
     </div>
 
     <div class="problem-grid">
       <div class="problem-card reveal">
         <div class="index" aria-hidden="true">01</div>
-        <div class="tag">CAPTURA DA BASE</div>
-        <div class="big">PLAYTOMIC FICA COM<br>OS <em>DADOS</em> DOS<br>SEUS JOGADORES.</div>
+        <div class="tag" data-i18n="problem.card1.tag">CAPTURA DA BASE</div>
+        <div class="big" data-i18n-html="problem.card1.big">PLAYTOMIC FICA COM<br>OS <em>DADOS</em> DOS<br>SEUS JOGADORES.</div>
       </div>
       <div class="problem-card reveal d1">
         <div class="index" aria-hidden="true">02</div>
-        <div class="tag">SEU TEMPO</div>
-        <div class="big">QUEM RESPONDE NO<br>GRUPO ÀS <em>23H</em>:<br>"FALTA UM PRA 7H"?</div>
+        <div class="tag" data-i18n="problem.card2.tag">SEU TEMPO</div>
+        <div class="big" data-i18n-html="problem.card2.big">QUEM RESPONDE NO<br>GRUPO ÀS <em>23H</em>:<br>"FALTA UM PRA 7H"?</div>
       </div>
       <div class="problem-card reveal d2">
         <div class="index" aria-hidden="true">03</div>
-        <div class="tag">RECEITA EVAPORANDO</div>
-        <div class="big">HORÁRIOS <em>MORTOS</em> =<br>DINHEIRO PERDIDO<br>TODA SEMANA.</div>
+        <div class="tag" data-i18n="problem.card3.tag">RECEITA EVAPORANDO</div>
+        <div class="big" data-i18n-html="problem.card3.big">HORÁRIOS <em>MORTOS</em> =<br>DINHEIRO PERDIDO<br>TODA SEMANA.</div>
       </div>
     </div>
   </div>
@@ -470,13 +487,13 @@
 <section class="agent" id="agente" data-screen-label="03 Agente Proativo" aria-labelledby="agente-title">
   <div class="wrap">
     <div class="agent-head">
-      <div class="agent-tag reveal"><span class="dot"></span>O DIFERENCIAL · NUNCA FEITO ANTES</div>
-      <h2 id="agente-title" class="reveal d1">
+      <div class="agent-tag reveal"><span class="dot"></span><span data-i18n="agent.tag">O DIFERENCIAL · NUNCA FEITO ANTES</span></div>
+      <h2 id="agente-title" class="reveal d1" data-i18n-html="agent.title">
         O SAQUE <span class="strike">NÃO ESPERA</span>.<br>
         ELE <em>BUSCA</em> DUPLA<br>
         PRA VOCÊ.
       </h2>
-      <p class="agent-sub reveal d2">
+      <p class="agent-sub reveal d2" data-i18n-html="agent.sub">
         Enquanto outros sistemas ficam <strong>esperando</strong> o jogador abrir um app, o Saque está
         <span class="hi">dentro do seu grupo de WhatsApp</span>, conhece quem joga em que horário e nível, e
         <strong>monta partida sozinho</strong>.
@@ -485,7 +502,7 @@
 
     <div class="agent-grid">
       <!-- WhatsApp Mockup -->
-      <div class="reveal d1" aria-label="Demonstração de conversa do agente Saque no WhatsApp">
+      <div class="reveal d1" data-i18n-attr-aria-label="agent.mockup.aria" aria-label="Demonstração de conversa do agente Saque no WhatsApp">
         <div class="phone">
           <div class="notch"></div>
           <div class="phone-screen">
@@ -493,54 +510,54 @@
               <span class="wa-back" aria-hidden="true">‹</span>
               <div class="wa-avatar">S</div>
               <div class="wa-name">
-                <div class="n">Saque · Padel Clube</div>
-                <div class="s">online · digitando…</div>
+                <div class="n" data-i18n="phone.wa.name">Saque · Padel Clube</div>
+                <div class="s" data-i18n="phone.wa.status">online · digitando…</div>
               </div>
               <div class="wa-icons" aria-hidden="true">
                 <span>📞</span><span>⋮</span>
               </div>
             </div>
             <div class="wa-body">
-              <div class="wa-divider">HOJE</div>
+              <div class="wa-divider" data-i18n="phone.divider.hoje">HOJE</div>
 
               <div class="bubble in saque reveal">
                 <span class="name">SAQUE</span>
-                Oi Carlos! Abriu vaga <strong>amanhã 19h</strong>, categoria 4ª. Você joga sempre nesse horário com o Pedro. Topa? 🎾
+                <span data-i18n-html="phone.bubble1">Oi Carlos! Abriu vaga <strong>amanhã 19h</strong>, categoria 4ª. Você joga sempre nesse horário com o Pedro. Topa? 🎾</span>
                 <span class="time">19:42</span>
               </div>
 
               <div class="bubble out reveal d1">
-                Bora! Tu confirma com o Pedro?
+                <span data-i18n="phone.bubble2">Bora! Tu confirma com o Pedro?</span>
                 <span class="time">19:43 <span class="check">✓✓</span></span>
               </div>
 
               <div class="bubble in saque reveal d2">
                 <span class="name">SAQUE</span>
-                Já chamei. Ele topou. Mando o Pix do sinal pra vocês dois? R$ 30 cada.
+                <span data-i18n="phone.bubble3">Já chamei. Ele topou. Mando o Pix do sinal pra vocês dois? R$ 30 cada.</span>
                 <span class="time">19:43</span>
               </div>
 
               <div class="bubble out reveal d3">
-                Manda 🔥
+                <span data-i18n="phone.bubble4">Manda 🔥</span>
                 <span class="time">19:44 <span class="check">✓✓</span></span>
               </div>
 
-              <div class="wa-divider">GRUPO · 4ª CATEGORIA</div>
+              <div class="wa-divider" data-i18n="phone.divider.grupo">GRUPO · 4ª CATEGORIA</div>
 
               <div class="bubble in saque reveal d4">
                 <span class="name">SAQUE</span>
-                <strong>Pessoal da 4ª:</strong> Marcos e João estão procurando dupla <strong>sábado 8h</strong>. Quem cola?
+                <span data-i18n-html="phone.bubble5"><strong>Pessoal da 4ª:</strong> Marcos e João estão procurando dupla <strong>sábado 8h</strong>. Quem cola?</span>
                 <span class="time">20:11</span>
               </div>
 
               <div class="bubble in saque reveal d5">
                 <span class="name">SAQUE</span>
-                Lu, o Pedro tá procurando parceira pro <strong>torneio interno</strong>. Nível parecido com o teu. Te conecto com ele?
+                <span data-i18n-html="phone.bubble6">Lu, o Pedro tá procurando parceira pro <strong>torneio interno</strong>. Nível parecido com o teu. Te conecto com ele?</span>
                 <span class="time">20:18</span>
               </div>
 
               <div class="bubble in reveal d6" style="padding:10px 14px">
-                <div class="typing" aria-label="Saque está digitando"><span></span><span></span><span></span></div>
+                <div class="typing" data-i18n-attr-aria-label="phone.typing.aria" aria-label="Saque está digitando"><span></span><span></span><span></span></div>
               </div>
             </div>
           </div>
@@ -552,22 +569,22 @@
         <div class="agent-feature reveal d2">
           <div class="ix">01</div>
           <div>
-            <h4>PERFILA CADA JOGADOR</h4>
-            <p><strong>Nível, horários habituais, parceiros frequentes.</strong> Aprende sozinho com a base de conversas e reservas do seu clube.</p>
+            <h4 data-i18n="agent.feat1.h4">PERFILA CADA JOGADOR</h4>
+            <p data-i18n-html="agent.feat1.p"><strong>Nível, horários habituais, parceiros frequentes.</strong> Aprende sozinho com a base de conversas e reservas do seu clube.</p>
           </div>
         </div>
         <div class="agent-feature reveal d3">
           <div class="ix">02</div>
           <div>
-            <h4>GERENCIA OS GRUPOS DO CLUBE</h4>
-            <p>Iniciante, <strong>6ª, 5ª, 4ª, 3ª</strong> — o Saque organiza cada categoria no grupo certo e fala com cada nível na hora certa.</p>
+            <h4 data-i18n="agent.feat2.h4">GERENCIA OS GRUPOS DO CLUBE</h4>
+            <p data-i18n-html="agent.feat2.p">Iniciante, <strong>6ª, 5ª, 4ª, 3ª</strong> — o Saque organiza cada categoria no grupo certo e fala com cada nível na hora certa.</p>
           </div>
         </div>
         <div class="agent-feature reveal d4">
           <div class="ix">03</div>
           <div>
-            <h4>FECHA PARTIDA PROATIVAMENTE</h4>
-            <p>Não espera ninguém procurar. <strong>Vê o vazio, busca dupla, fecha a quadra.</strong> Você só descobre quando ela já tá cheia.</p>
+            <h4 data-i18n="agent.feat3.h4">FECHA PARTIDA PROATIVAMENTE</h4>
+            <p data-i18n-html="agent.feat3.p">Não espera ninguém procurar. <strong>Vê o vazio, busca dupla, fecha a quadra.</strong> Você só descobre quando ela já tá cheia.</p>
           </div>
         </div>
       </div>
@@ -579,56 +596,56 @@
 <section class="solution" id="solucao" data-screen-label="04 Outras funcionalidades" aria-labelledby="solucao-title">
   <div class="wrap">
     <div class="section-head">
-      <div class="num reveal">[ 04 / E TAMBÉM ]</div>
-      <h2 id="solucao-title" class="reveal d1">TUDO O QUE JÁ ERA<br>O <em>BÁSICO.</em></h2>
+      <div class="num reveal" data-i18n="solution.num">[ 04 / E TAMBÉM ]</div>
+      <h2 id="solucao-title" class="reveal d1" data-i18n-html="solution.title">TUDO O QUE JÁ ERA<br>O <em>BÁSICO.</em></h2>
     </div>
 
     <div class="feat-grid">
       <div class="feat reveal">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3.5-7.1L21 4l-1 3.5A8.95 8.95 0 0 1 21 12Z"/><path d="M8 12h8M8 9h5M8 15h6"/></svg></div>
         <div>
-          <h3>RESERVAS<br>24/7 NO WHATSAPP</h3>
-          <p>Cliente manda mensagem. Saque vê agenda, sugere horário, fecha.</p>
+          <h3 data-i18n-html="solution.feat1.h3">RESERVAS<br>24/7 NO WHATSAPP</h3>
+          <p data-i18n="solution.feat1.p">Cliente manda mensagem. Saque vê agenda, sugere horário, fecha.</p>
         </div>
         <div class="num">FEATURE / 01</div>
       </div>
       <div class="feat reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h12"/><path d="M16 17l3 3 4-5"/></svg></div>
         <div>
-          <h3>COBRANÇA DE<br>SINAL VIA PIX</h3>
-          <p>Reserva só vira reserva com Pix pago. Adeus, fura-bolo.</p>
+          <h3 data-i18n-html="solution.feat2.h3">COBRANÇA DE<br>SINAL VIA PIX</h3>
+          <p data-i18n="solution.feat2.p">Reserva só vira reserva com Pix pago. Adeus, fura-bolo.</p>
         </div>
         <div class="num">FEATURE / 02</div>
       </div>
       <div class="feat reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg></div>
         <div>
-          <h3>LISTA DE ESPERA<br>INTELIGENTE</h3>
-          <p>Cancelou? O Saque já oferece pra fila em segundos.</p>
+          <h3 data-i18n-html="solution.feat3.h3">LISTA DE ESPERA<br>INTELIGENTE</h3>
+          <p data-i18n="solution.feat3.p">Cancelou? O Saque já oferece pra fila em segundos.</p>
         </div>
         <div class="num">FEATURE / 03</div>
       </div>
       <div class="feat reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v4h-4"/></svg></div>
         <div>
-          <h3>PROMOS EM<br>HORÁRIO VAZIO</h3>
-          <p>Quarta às 14h vazia? Dispara promo segmentada e enche a quadra.</p>
+          <h3 data-i18n-html="solution.feat4.h3">PROMOS EM<br>HORÁRIO VAZIO</h3>
+          <p data-i18n="solution.feat4.p">Quarta às 14h vazia? Dispara promo segmentada e enche a quadra.</p>
         </div>
         <div class="num">FEATURE / 04</div>
       </div>
       <div class="feat reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
         <div>
-          <h3>CRM PRÓPRIO<br>DO CLUBE</h3>
-          <p>Frequência, gasto, nível, telefone — tudo na sua mão. Você é dono.</p>
+          <h3 data-i18n-html="solution.feat5.h3">CRM PRÓPRIO<br>DO CLUBE</h3>
+          <p data-i18n="solution.feat5.p">Frequência, gasto, nível, telefone — tudo na sua mão. Você é dono.</p>
         </div>
         <div class="num">FEATURE / 05</div>
       </div>
       <div class="feat reveal d3">
         <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M9 4v16M5 8h4M5 12h4M5 16h4"/></svg></div>
         <div>
-          <h3>ZERO APP EXTRA<br>PRO CLIENTE</h3>
-          <p>Tudo no WhatsApp. Onde o brasileiro já vive. Zero fricção.</p>
+          <h3 data-i18n-html="solution.feat6.h3">ZERO APP EXTRA<br>PRO CLIENTE</h3>
+          <p data-i18n="solution.feat6.p">Tudo no WhatsApp. Onde o brasileiro já vive. Zero fricção.</p>
         </div>
         <div class="num">FEATURE / 06</div>
       </div>
@@ -643,29 +660,29 @@
   </svg>
   <div class="wrap">
     <div class="numbers-head">
-      <h2 id="numbers-title" class="reveal">A PROMESSA<br>DO <em>PILOTO.</em></h2>
-      <span class="legend reveal d1">// METAS · FASE PILOTO 2026</span>
+      <h2 id="numbers-title" class="reveal" data-i18n-html="numbers.title">A PROMESSA<br>DO <em>PILOTO.</em></h2>
+      <span class="legend reveal d1" data-i18n="numbers.legend">// METAS · FASE PILOTO 2026</span>
     </div>
 
     <div class="stats">
       <div class="stat reveal">
         <div class="index">[ KPI 01 ]</div>
         <div class="big">+30<sup>%</sup></div>
-        <div class="label">de ocupação adicional em horários mortos no primeiro trimestre.</div>
+        <div class="label" data-i18n="numbers.kpi1.label">de ocupação adicional em horários mortos no primeiro trimestre.</div>
       </div>
       <div class="stat reveal d1">
         <div class="index">[ KPI 02 ]</div>
         <div class="big">0</div>
-        <div class="label">partidas perdidas por falta de dupla — o agente arruma sozinho.</div>
+        <div class="label" data-i18n="numbers.kpi2.label">partidas perdidas por falta de dupla — o agente arruma sozinho.</div>
       </div>
       <div class="stat reveal d2">
         <div class="index">[ KPI 03 ]</div>
         <div class="big">24<sup>/7</sup></div>
-        <div class="label">de atendimento sem contratar, treinar ou pagar mais ninguém.</div>
+        <div class="label" data-i18n="numbers.kpi3.label">de atendimento sem contratar, treinar ou pagar mais ninguém.</div>
       </div>
     </div>
 
-    <p class="estimate-note">* <strong>Metas da fase piloto — você ajuda a moldar.</strong> Os números variam por clube, agenda e fluxo atual. Tudo é medido junto, com transparência total.</p>
+    <p class="estimate-note" data-i18n-html="numbers.estimate.note">* <strong>Metas da fase piloto — você ajuda a moldar.</strong> Os números variam por clube, agenda e fluxo atual. Tudo é medido junto, com transparência total.</p>
   </div>
 </section>
 
@@ -674,32 +691,32 @@
   <div class="wrap">
     <div class="section-head">
       <div class="num reveal">[ 06 / SETUP ]</div>
-      <h2 id="how-title" class="reveal d1">3 PASSOS.<br>UMA <em>SEMANA.</em></h2>
+      <h2 id="how-title" class="reveal d1" data-i18n-html="how.title">3 PASSOS.<br>UMA <em>SEMANA.</em></h2>
     </div>
 
     <div class="steps">
       <div class="step reveal">
-        <div class="tag">PASSO</div>
+        <div class="tag" data-i18n="how.step.tag">PASSO</div>
         <div class="step-num">01</div>
         <div>
-          <h3>CONECTAMOS AO<br>WHATSAPP DO CLUBE.</h3>
-          <p>Plug no número e nos grupos das categorias. Sem trocar chip. Sem cliente perceber.</p>
+          <h3 data-i18n-html="how.step1.h3">CONECTAMOS AO<br>WHATSAPP DO CLUBE.</h3>
+          <p data-i18n="how.step1.p">Plug no número e nos grupos das categorias. Sem trocar chip. Sem cliente perceber.</p>
         </div>
       </div>
       <div class="step reveal d1">
-        <div class="tag">PASSO</div>
+        <div class="tag" data-i18n="how.step.tag">PASSO</div>
         <div class="step-num">02</div>
         <div>
-          <h3>ELE APRENDE<br>SOZINHO.</h3>
-          <p>Quem joga, em que nível, em que horário, com quem. A IA mapeia sua base em dias.</p>
+          <h3 data-i18n-html="how.step2.h3">ELE APRENDE<br>SOZINHO.</h3>
+          <p data-i18n="how.step2.p">Quem joga, em que nível, em que horário, com quem. A IA mapeia sua base em dias.</p>
         </div>
       </div>
       <div class="step reveal d2">
-        <div class="tag">PASSO</div>
+        <div class="tag" data-i18n="how.step.tag">PASSO</div>
         <div class="step-num">03</div>
         <div>
-          <h3>VOCÊ RELAXA. ELE<br>ARRUMA AS DUPLAS.</h3>
-          <p>Atende, reserva, cobra e fecha partida. Você acompanha tudo num painel limpo.</p>
+          <h3 data-i18n-html="how.step3.h3">VOCÊ RELAXA. ELE<br>ARRUMA AS DUPLAS.</h3>
+          <p data-i18n="how.step3.p">Atende, reserva, cobra e fecha partida. Você acompanha tudo num painel limpo.</p>
         </div>
       </div>
     </div>
@@ -712,20 +729,20 @@
     <div class="form-grid">
       <div class="form-left">
         <div class="eyebrow reveal">[ 07 / PILOTO 2026 ]</div>
-        <h2 id="form-title" class="reveal d1" style="margin-top:18px">QUER TESTAR<br>ANTES DE <em>TODO MUNDO?</em></h2>
-        <p class="reveal d2">Estamos selecionando <strong>10 clubes piloto</strong> no Brasil. Condição especial, acompanhamento direto, e você ajuda a moldar o produto.</p>
+        <h2 id="form-title" class="reveal d1" style="margin-top:18px" data-i18n-html="form.title">QUER TESTAR<br>ANTES DE <em>TODO MUNDO?</em></h2>
+        <p class="reveal d2" data-i18n-html="form.intro">Estamos selecionando <strong>10 clubes piloto</strong> no Brasil. Condição especial, acompanhamento direto, e você ajuda a moldar o produto.</p>
 
         <div class="perks reveal d3">
-          <div class="perk"><span class="tick" aria-hidden="true">✓</span> Preço de piloto travado por 12 meses</div>
-          <div class="perk"><span class="tick" aria-hidden="true">✓</span> Setup, treino da IA e migração por nossa conta</div>
-          <div class="perk"><span class="tick" aria-hidden="true">✓</span> Linha direta com o time fundador</div>
-          <div class="perk"><span class="tick" aria-hidden="true">✓</span> Você ajuda a definir o roadmap do produto</div>
+          <div class="perk"><span class="tick" aria-hidden="true">✓</span> <span data-i18n="form.perk1">Preço de piloto travado por 12 meses</span></div>
+          <div class="perk"><span class="tick" aria-hidden="true">✓</span> <span data-i18n="form.perk2">Setup, treino da IA e migração por nossa conta</span></div>
+          <div class="perk"><span class="tick" aria-hidden="true">✓</span> <span data-i18n="form.perk3">Linha direta com o time fundador</span></div>
+          <div class="perk"><span class="tick" aria-hidden="true">✓</span> <span data-i18n="form.perk4">Você ajuda a definir o roadmap do produto</span></div>
         </div>
 
-        <div class="slots reveal d3" aria-label="Vagas restantes no piloto">
+        <div class="slots reveal d3" data-i18n-attr-aria-label="form.slots.aria" aria-label="Vagas restantes no piloto">
           <div>
-            <div class="label">VAGAS RESTANTES</div>
-            <div class="counter"><em>07</em>/10</div>
+            <div class="label" data-i18n="form.slots.label">VAGAS RESTANTES</div>
+            <div class="counter" data-i18n-html="form.slots.counter"><em>07</em>/10</div>
           </div>
           <div class="bar" aria-hidden="true"><i></i></div>
         </div>
@@ -734,45 +751,45 @@
       <form class="form-card reveal d1" id="leadForm" novalidate aria-labelledby="form-card-title">
         <div class="corner" aria-hidden="true"></div>
         <div class="head">
-          <div class="title" id="form-card-title">// CANDIDATURA AO PILOTO</div>
-          <div class="stat" aria-live="polite"><span class="pulse"></span><span id="formStatus">AGUARDANDO</span></div>
+          <div class="title" id="form-card-title" data-i18n="form.card.title">// CANDIDATURA AO PILOTO</div>
+          <div class="stat" aria-live="polite"><span class="pulse"></span><span id="formStatus" data-i18n="form.status.initial">AGUARDANDO</span></div>
         </div>
 
         <div class="form-body" id="formBody">
           <div class="field">
-            <label for="nome">SEU NOME</label>
-            <input id="nome" name="nome" type="text" required autocomplete="name" placeholder="Ex.: Lucas Vieira" aria-required="true" />
-            <span class="err">Preencha seu nome.</span>
+            <label for="nome" data-i18n="form.field.nome.label">SEU NOME</label>
+            <input id="nome" name="nome" type="text" required autocomplete="name" data-i18n-attr-placeholder="form.field.nome.placeholder" placeholder="Ex.: Lucas Vieira" aria-required="true" />
+            <span class="err" data-i18n="form.field.nome.err">Preencha seu nome.</span>
           </div>
 
           <div class="field">
             <label for="whats">WHATSAPP</label>
-            <input id="whats" name="whatsapp" type="tel" required inputmode="tel" autocomplete="tel" placeholder="(51) 9 8888-7777" aria-required="true" maxlength="16" />
-            <span class="err">Informe um número válido com DDD.</span>
+            <input id="whats" name="whatsapp" type="tel" required inputmode="tel" autocomplete="tel" data-i18n-attr-placeholder="form.field.whats.placeholder" placeholder="(51) 9 8888-7777" aria-required="true" maxlength="20" />
+            <span class="err" data-i18n="form.field.whats.err">Informe um número válido com DDD.</span>
           </div>
 
           <div class="field">
-            <label for="clube">NOME DO CLUBE</label>
-            <input id="clube" name="clube" type="text" required placeholder="Ex.: Padel POA" aria-required="true" />
-            <span class="err">Informe o nome do clube.</span>
+            <label for="clube" data-i18n="form.field.clube.label">NOME DO CLUBE</label>
+            <input id="clube" name="clube" type="text" required data-i18n-attr-placeholder="form.field.clube.placeholder" placeholder="Ex.: Padel POA" aria-required="true" />
+            <span class="err" data-i18n="form.field.clube.err">Informe o nome do clube.</span>
           </div>
 
           <div class="field">
-            <label for="cidade">CIDADE <span style="opacity:.5;text-transform:none;letter-spacing:0">(opcional)</span></label>
-            <input id="cidade" name="cidade" type="text" placeholder="Ex.: São Paulo, Porto Alegre, Recife" autocomplete="address-level2" />
+            <label for="cidade" data-i18n-html="form.field.cidade.label">CIDADE <span style="opacity:.5;text-transform:none;letter-spacing:0">(opcional)</span></label>
+            <input id="cidade" name="cidade" type="text" data-i18n-attr-placeholder="form.field.cidade.placeholder" placeholder="Ex.: São Paulo, Porto Alegre, Recife" autocomplete="address-level2" />
           </div>
 
           <button type="submit" class="form-submit" id="submitBtn">
-            <span id="submitLabel">ENTRAR NA LISTA DOS PILOTOS</span>
+            <span id="submitLabel" data-i18n="form.submit.label">ENTRAR NA LISTA DOS PILOTOS</span>
             <span aria-hidden="true">→</span>
           </button>
-          <div class="form-fine">RESPOSTA EM ATÉ 24H · SEUS DADOS NÃO VÃO PRA LUGAR NENHUM</div>
+          <div class="form-fine" data-i18n="form.fine">RESPOSTA EM ATÉ 24H · SEUS DADOS NÃO VÃO PRA LUGAR NENHUM</div>
         </div>
 
         <div class="success" id="success" role="status" aria-live="polite">
           <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5 13 10 18 19 7"/></svg></div>
-          <h3>BOA!<br>RECEBEMOS.</h3>
-          <p>Te chamamos no WhatsApp em até <strong style="color:#fff">24h</strong>.<br>Já abrimos uma janela com a mensagem pronta — é só apertar enviar. <span class="ball">🎾</span></p>
+          <h3 data-i18n-html="form.success.h3">BOA!<br>RECEBEMOS.</h3>
+          <p data-i18n-html="form.success.p">Te chamamos no WhatsApp em até <strong style="color:#fff">24h</strong>.<br>Já abrimos uma janela com a mensagem pronta — é só apertar enviar. <span class="ball">🎾</span></p>
         </div>
       </form>
     </div>
@@ -783,7 +800,7 @@
 <footer role="contentinfo">
   <div class="wrap foot-grid">
     <div class="foot-logo"><span class="dot"></span>SAQUE</div>
-    <div class="foot-tag">FEITO PARA O PADEL <span>BRASILEIRO.</span></div>
+    <div class="foot-tag" data-i18n-html="footer.tag">FEITO PARA O PADEL <span>BRASILEIRO.</span></div>
     <div class="foot-meta">© 2026 SAQUE</div>
   </div>
 </footer>
@@ -793,6 +810,291 @@
   const FORMSPREE_ENDPOINT = "${FORMSPREE_ENDPOINT}";
   const WA_NUMBER = "${WA_NUMBER}";
   // -----------------------------------------------------------
+
+  // AR WhatsApp target — VISIBLE placeholder until Guille sets the real number before publishing ES.
+  // (Reuses no env var on purpose: the BR number must not silently catch AR leads.)
+  const WA_NUMBER_AR = "[WA_AR_TBD]";
+
+  // ---- i18n dictionary — PT-BR default (server-rendered) · ES localizado a Argentina (rioplatense) ----
+  // TRAMPA envsubst: NUNCA poner ${WA_NUMBER} ni ${FORMSPREE_ENDPOINT} dentro de un value (los inyectaría mid-string).
+  // Hard business data (precio, método de pago, cantidad de clubes/slots) = placeholders [..._AR_TBD] visibles.
+  const I18N = {
+    pt: {
+      'meta.title': 'SAQUE — O agente de IA que arruma as duplas do seu clube de padel',
+      'meta.description': 'O primeiro agente de IA que arruma duplas pelos grupos do WhatsApp do seu clube de padel. Reservas, sinal no Pix, lista de espera e atendimento 24/7. Sem app extra.',
+      'meta.og.title': 'SAQUE — Seu clube. Seus clientes. Seu WhatsApp.',
+      'meta.og.description': 'O agente de IA que ARRUMA dupla sozinho no WhatsApp do seu clube de padel. 24/7.',
+      'meta.og.locale': 'pt_BR',
+      'nav.logo.aria': 'Saque, página inicial',
+      'nav.lang.aria': 'Selecionar idioma',
+      'nav.cta': 'ENTRAR NA LISTA',
+      'hero.badge.num': '10',
+      'hero.badge.label': 'VAGAS · CLUBES PILOTO · BRASIL',
+      'hero.h1.l1': 'SEU CLUBE.',
+      'hero.h1.l2': 'SEUS <em>CLIENTES</em>.',
+      'hero.h1.l3': 'SEU WHATSAPP.',
+      'hero.sub': 'O <span class="hi">primeiro</span> agente de IA que <strong>ARRUMA as duplas</strong> dos seus jogadores. Sozinho. No WhatsApp. <strong>24 horas por dia.</strong>',
+      'hero.btn.primary': 'QUERO ENTRAR NA LISTA',
+      'hero.btn.ghost': 'VER COMO ELE ARRUMA DUPLA',
+      'hero.stat1.v': 'ATENDE NO DOMINGO ÀS 23H. SEM RECLAMAR.',
+      'hero.stat2.v': 'COMISSÃO POR RESERVA. O CLIENTE É SEU.',
+      'hero.stat3.v': 'META DE OCUPAÇÃO EM HORÁRIOS MORTOS.',
+      'marquee.item1': 'BUSCA DUPLA NO GRUPO',
+      'marquee.item2': 'COBRA SINAL NO PIX',
+      'marquee.item3': 'CONHECE CADA JOGADOR',
+      'marquee.item4': 'FECHA PARTIDA SOZINHO',
+      'marquee.item5': 'SEM APP EXTRA',
+      'problem.title': 'VOCÊ É DONO DO CLUBE.<br>MAS É DONO DOS <em>CLIENTES?</em>',
+      'problem.card1.tag': 'CAPTURA DA BASE',
+      'problem.card1.big': 'PLAYTOMIC FICA COM<br>OS <em>DADOS</em> DOS<br>SEUS JOGADORES.',
+      'problem.card2.tag': 'SEU TEMPO',
+      'problem.card2.big': 'QUEM RESPONDE NO<br>GRUPO ÀS <em>23H</em>:<br>"FALTA UM PRA 7H"?',
+      'problem.card3.tag': 'RECEITA EVAPORANDO',
+      'problem.card3.big': 'HORÁRIOS <em>MORTOS</em> =<br>DINHEIRO PERDIDO<br>TODA SEMANA.',
+      'agent.tag': 'O DIFERENCIAL · NUNCA FEITO ANTES',
+      'agent.title': 'O SAQUE <span class="strike">NÃO ESPERA</span>.<br>ELE <em>BUSCA</em> DUPLA<br>PRA VOCÊ.',
+      'agent.sub': 'Enquanto outros sistemas ficam <strong>esperando</strong> o jogador abrir um app, o Saque está <span class="hi">dentro do seu grupo de WhatsApp</span>, conhece quem joga em que horário e nível, e <strong>monta partida sozinho</strong>.',
+      'agent.mockup.aria': 'Demonstração de conversa do agente Saque no WhatsApp',
+      'agent.feat1.h4': 'PERFILA CADA JOGADOR',
+      'agent.feat1.p': '<strong>Nível, horários habituais, parceiros frequentes.</strong> Aprende sozinho com a base de conversas e reservas do seu clube.',
+      'agent.feat2.h4': 'GERENCIA OS GRUPOS DO CLUBE',
+      'agent.feat2.p': 'Iniciante, <strong>6ª, 5ª, 4ª, 3ª</strong> — o Saque organiza cada categoria no grupo certo e fala com cada nível na hora certa.',
+      'agent.feat3.h4': 'FECHA PARTIDA PROATIVAMENTE',
+      'agent.feat3.p': 'Não espera ninguém procurar. <strong>Vê o vazio, busca dupla, fecha a quadra.</strong> Você só descobre quando ela já tá cheia.',
+      'phone.wa.name': 'Saque · Padel Clube',
+      'phone.wa.status': 'online · digitando…',
+      'phone.divider.hoje': 'HOJE',
+      'phone.bubble1': 'Oi Carlos! Abriu vaga <strong>amanhã 19h</strong>, categoria 4ª. Você joga sempre nesse horário com o Pedro. Topa? 🎾',
+      'phone.bubble2': 'Bora! Tu confirma com o Pedro?',
+      'phone.bubble3': 'Já chamei. Ele topou. Mando o Pix do sinal pra vocês dois? R$ 30 cada.',
+      'phone.bubble4': 'Manda 🔥',
+      'phone.divider.grupo': 'GRUPO · 4ª CATEGORIA',
+      'phone.bubble5': '<strong>Pessoal da 4ª:</strong> Marcos e João estão procurando dupla <strong>sábado 8h</strong>. Quem cola?',
+      'phone.bubble6': 'Lu, o Pedro tá procurando parceira pro <strong>torneio interno</strong>. Nível parecido com o teu. Te conecto com ele?',
+      'phone.typing.aria': 'Saque está digitando',
+      'solution.num': '[ 04 / E TAMBÉM ]',
+      'solution.title': 'TUDO O QUE JÁ ERA<br>O <em>BÁSICO.</em>',
+      'solution.feat1.h3': 'RESERVAS<br>24/7 NO WHATSAPP',
+      'solution.feat1.p': 'Cliente manda mensagem. Saque vê agenda, sugere horário, fecha.',
+      'solution.feat2.h3': 'COBRANÇA DE<br>SINAL VIA PIX',
+      'solution.feat2.p': 'Reserva só vira reserva com Pix pago. Adeus, fura-bolo.',
+      'solution.feat3.h3': 'LISTA DE ESPERA<br>INTELIGENTE',
+      'solution.feat3.p': 'Cancelou? O Saque já oferece pra fila em segundos.',
+      'solution.feat4.h3': 'PROMOS EM<br>HORÁRIO VAZIO',
+      'solution.feat4.p': 'Quarta às 14h vazia? Dispara promo segmentada e enche a quadra.',
+      'solution.feat5.h3': 'CRM PRÓPRIO<br>DO CLUBE',
+      'solution.feat5.p': 'Frequência, gasto, nível, telefone — tudo na sua mão. Você é dono.',
+      'solution.feat6.h3': 'ZERO APP EXTRA<br>PRO CLIENTE',
+      'solution.feat6.p': 'Tudo no WhatsApp. Onde o brasileiro já vive. Zero fricção.',
+      'numbers.title': 'A PROMESSA<br>DO <em>PILOTO.</em>',
+      'numbers.legend': '// METAS · FASE PILOTO 2026',
+      'numbers.kpi1.label': 'de ocupação adicional em horários mortos no primeiro trimestre.',
+      'numbers.kpi2.label': 'partidas perdidas por falta de dupla — o agente arruma sozinho.',
+      'numbers.kpi3.label': 'de atendimento sem contratar, treinar ou pagar mais ninguém.',
+      'numbers.estimate.note': '* <strong>Metas da fase piloto — você ajuda a moldar.</strong> Os números variam por clube, agenda e fluxo atual. Tudo é medido junto, com transparência total.',
+      'how.title': '3 PASSOS.<br>UMA <em>SEMANA.</em>',
+      'how.step.tag': 'PASSO',
+      'how.step1.h3': 'CONECTAMOS AO<br>WHATSAPP DO CLUBE.',
+      'how.step1.p': 'Plug no número e nos grupos das categorias. Sem trocar chip. Sem cliente perceber.',
+      'how.step2.h3': 'ELE APRENDE<br>SOZINHO.',
+      'how.step2.p': 'Quem joga, em que nível, em que horário, com quem. A IA mapeia sua base em dias.',
+      'how.step3.h3': 'VOCÊ RELAXA. ELE<br>ARRUMA AS DUPLAS.',
+      'how.step3.p': 'Atende, reserva, cobra e fecha partida. Você acompanha tudo num painel limpo.',
+      'form.title': 'QUER TESTAR<br>ANTES DE <em>TODO MUNDO?</em>',
+      'form.intro': 'Estamos selecionando <strong>10 clubes piloto</strong> no Brasil. Condição especial, acompanhamento direto, e você ajuda a moldar o produto.',
+      'form.perk1': 'Preço de piloto travado por 12 meses',
+      'form.perk2': 'Setup, treino da IA e migração por nossa conta',
+      'form.perk3': 'Linha direta com o time fundador',
+      'form.perk4': 'Você ajuda a definir o roadmap do produto',
+      'form.slots.aria': 'Vagas restantes no piloto',
+      'form.slots.label': 'VAGAS RESTANTES',
+      'form.slots.counter': '<em>07</em>/10',
+      'form.card.title': '// CANDIDATURA AO PILOTO',
+      'form.status.initial': 'AGUARDANDO',
+      'form.field.nome.label': 'SEU NOME',
+      'form.field.nome.placeholder': 'Ex.: Lucas Vieira',
+      'form.field.nome.err': 'Preencha seu nome.',
+      'form.field.whats.placeholder': '(51) 9 8888-7777',
+      'form.field.whats.err': 'Informe um número válido com DDD.',
+      'form.field.clube.label': 'NOME DO CLUBE',
+      'form.field.clube.placeholder': 'Ex.: Padel POA',
+      'form.field.clube.err': 'Informe o nome do clube.',
+      'form.field.cidade.label': 'CIDADE <span style="opacity:.5;text-transform:none;letter-spacing:0">(opcional)</span>',
+      'form.field.cidade.placeholder': 'Ex.: São Paulo, Porto Alegre, Recife',
+      'form.submit.label': 'ENTRAR NA LISTA DOS PILOTOS',
+      'form.fine': 'RESPOSTA EM ATÉ 24H · SEUS DADOS NÃO VÃO PRA LUGAR NENHUM',
+      'form.success.h3': 'BOA!<br>RECEBEMOS.',
+      'form.success.p': 'Te chamamos no WhatsApp em até <strong style="color:#fff">24h</strong>.<br>Já abrimos uma janela com a mensagem pronta — é só apertar enviar. <span class="ball">🎾</span>',
+      'footer.tag': 'FEITO PARA O PADEL <span>BRASILEIRO.</span>',
+      'form.status.sending': 'ENVIANDO',
+      'form.status.received': 'RECEBIDO',
+      'form.submit.sending': 'ENVIANDO...',
+      'form.wa.fallback': 'ABRIR WHATSAPP →'
+    },
+    es: {
+      'meta.title': 'SAQUE — El agente de IA que arma las parejas de tu club de pádel',
+      'meta.description': 'El primer agente de IA que arma parejas por los grupos de WhatsApp de tu club de pádel. Turnos, seña, lista de espera y atención 24/7. Sin apps de más.',
+      'meta.og.title': 'SAQUE — Tu club. Tus clientes. Tu WhatsApp.',
+      'meta.og.description': 'El agente de IA que ARMA la pareja solo en el WhatsApp de tu club de pádel. 24/7.',
+      'meta.og.locale': 'es_AR',
+      'nav.logo.aria': 'Saque, página de inicio',
+      'nav.lang.aria': 'Seleccionar idioma',
+      'nav.cta': 'ENTRAR A LA LISTA',
+      'hero.badge.num': '[CLUBES_AR_TBD]',
+      'hero.badge.label': 'LUGARES · CLUBES PILOTO · ARGENTINA',
+      'hero.h1.l1': 'TU CLUB.',
+      'hero.h1.l2': 'TUS <em>CLIENTES</em>.',
+      'hero.h1.l3': 'TU WHATSAPP.',
+      'hero.sub': 'El <span class="hi">primer</span> agente de IA que <strong>ARMA las parejas</strong> de tus jugadores. Solo. En WhatsApp. <strong>24 horas por día.</strong>',
+      'hero.btn.primary': 'QUIERO ENTRAR A LA LISTA',
+      'hero.btn.ghost': 'MIRÁ CÓMO ARMA LA PAREJA',
+      'hero.stat1.v': 'ATIENDE EL DOMINGO A LAS 23. SIN QUEJARSE.',
+      'hero.stat2.v': 'COMISIÓN POR TURNO. EL CLIENTE ES TUYO.',
+      'hero.stat3.v': 'META DE OCUPACIÓN EN HORARIOS MUERTOS.',
+      'marquee.item1': 'BUSCA PAREJA EN EL GRUPO',
+      'marquee.item2': 'COBRA LA SEÑA POR [METODO_PAGO_AR_TBD]',
+      'marquee.item3': 'CONOCE A CADA JUGADOR',
+      'marquee.item4': 'CIERRA EL PARTIDO SOLO',
+      'marquee.item5': 'SIN APP DE MÁS',
+      'problem.title': 'SOS DUEÑO DEL CLUB.<br>¿PERO SOS DUEÑO DE LOS <em>CLIENTES?</em>',
+      'problem.card1.tag': 'SE QUEDAN CON TU BASE',
+      'problem.card1.big': 'PLAYTOMIC SE QUEDA<br>CON LOS <em>DATOS</em> DE<br>TUS JUGADORES.',
+      'problem.card2.tag': 'TU TIEMPO',
+      'problem.card2.big': '¿QUIÉN CONTESTA EN<br>EL GRUPO A LAS <em>23</em>:<br>"FALTA UNO PARA LAS 7"?',
+      'problem.card3.tag': 'PLATA QUE SE EVAPORA',
+      'problem.card3.big': 'HORARIOS <em>MUERTOS</em> =<br>PLATA PERDIDA<br>TODAS LAS SEMANAS.',
+      'agent.tag': 'EL DIFERENCIAL · NUNCA SE HIZO ANTES',
+      'agent.title': 'EL SAQUE <span class="strike">NO ESPERA</span>.<br>SALE A <em>BUSCAR</em> PAREJA<br>POR VOS.',
+      'agent.sub': 'Mientras otros sistemas se quedan <strong>esperando</strong> a que el jugador abra una app, el Saque ya está <span class="hi">adentro de tu grupo de WhatsApp</span>, conoce quién juega en qué horario y categoría, y <strong>arma el partido solo</strong>.',
+      'agent.mockup.aria': 'Demostración de conversación del agente Saque en WhatsApp',
+      'agent.feat1.h4': 'PERFILA A CADA JUGADOR',
+      'agent.feat1.p': '<strong>Categoría, horarios de siempre, compañeros frecuentes.</strong> Aprende solo con la base de charlas y turnos de tu club.',
+      'agent.feat2.h4': 'MANEJA LOS GRUPOS DEL CLUB',
+      'agent.feat2.p': 'Principiante, <strong>7ma, 6ta, 5ta, 4ta</strong> — el Saque ordena cada categoría en el grupo justo y le habla a cada nivel en el momento justo.',
+      'agent.feat3.h4': 'CIERRA EL PARTIDO ANTES QUE NADIE',
+      'agent.feat3.p': 'No espera a que nadie busque. <strong>Ve el hueco, busca pareja, llena la cancha.</strong> Vos te enterás cuando ya está completa.',
+      'phone.wa.name': 'Saque · Pádel Club',
+      'phone.wa.status': 'en línea · escribiendo…',
+      'phone.divider.hoje': 'HOY',
+      'phone.bubble1': '¡Hola Carlos! Se abrió un lugar <strong>mañana 19hs</strong>, categoría 5ta. Vos jugás siempre a esa hora con Pedro. ¿Te prendés? 🎾',
+      'phone.bubble2': '¡Dale! ¿Vos arreglás con Pedro?',
+      'phone.bubble3': 'Ya le escribí. Se prendió. ¿Les paso la seña por [METODO_PAGO_AR_TBD] a los dos? [PRECIO_AR_TBD] cada uno.',
+      'phone.bubble4': 'Mandá 🔥',
+      'phone.divider.grupo': 'GRUPO · CATEGORÍA 5TA',
+      'phone.bubble5': '<strong>Gente de la 5ta:</strong> Marcos y Juan están buscando pareja para el <strong>sábado a las 8</strong>. ¿Quién se suma?',
+      'phone.bubble6': 'Lu, Pedro está buscando compañera para el <strong>torneo interno</strong>. Categoría parecida a la tuya. ¿Te conecto?',
+      'phone.typing.aria': 'Saque está escribiendo',
+      'solution.num': '[ 04 / Y ADEMÁS ]',
+      'solution.title': 'TODO LO QUE YA ERA<br>LO <em>BÁSICO.</em>',
+      'solution.feat1.h3': 'TURNOS<br>24/7 EN WHATSAPP',
+      'solution.feat1.p': 'El cliente manda un mensaje. El Saque mira la agenda, sugiere horario y cierra.',
+      'solution.feat2.h3': 'COBRO DE<br>SEÑA POR [METODO_PAGO_AR_TBD]',
+      'solution.feat2.p': 'El turno se confirma solo con la seña paga. Chau a los que cuelgan.',
+      'solution.feat3.h3': 'LISTA DE ESPERA<br>INTELIGENTE',
+      'solution.feat3.p': '¿Se cayó un turno? El Saque ya se lo ofrece a la lista en segundos.',
+      'solution.feat4.h3': 'PROMOS EN<br>HORARIO VACÍO',
+      'solution.feat4.p': '¿Miércoles a las 14 vacío? Dispara una promo segmentada y llena la cancha.',
+      'solution.feat5.h3': 'CRM PROPIO<br>DEL CLUB',
+      'solution.feat5.p': 'Frecuencia, gasto, categoría, teléfono — todo en tu mano. El dueño sos vos.',
+      'solution.feat6.h3': 'CERO APP DE MÁS<br>PARA EL CLIENTE',
+      'solution.feat6.p': 'Todo en WhatsApp. Donde el argentino ya vive. Cero fricción.',
+      'numbers.title': 'LA PROMESA<br>DEL <em>PILOTO.</em>',
+      'numbers.legend': '// METAS · FASE PILOTO 2026',
+      'numbers.kpi1.label': 'de ocupación adicional en horarios muertos en el primer trimestre.',
+      'numbers.kpi2.label': 'partidos perdidos por falta de pareja — el agente la arma solo.',
+      'numbers.kpi3.label': 'de atención sin contratar, capacitar ni pagarle a nadie más.',
+      'numbers.estimate.note': '* <strong>Metas de la fase piloto — vos ayudás a moldearlas.</strong> Los números varían según el club, la agenda y el flujo actual. Se mide todo en conjunto, con transparencia total.',
+      'how.title': '3 PASOS.<br>UNA <em>SEMANA.</em>',
+      'how.step.tag': 'PASO',
+      'how.step1.h3': 'CONECTAMOS AL<br>WHATSAPP DEL CLUB.',
+      'how.step1.p': 'Lo enchufamos al número y a los grupos de las categorías. Sin cambiar de chip. Sin que el cliente se entere.',
+      'how.step2.h3': 'APRENDE<br>SOLO.',
+      'how.step2.p': 'Quién juega, en qué categoría, en qué horario, con quién. La IA mapea tu base en días.',
+      'how.step3.h3': 'VOS RELAJÁS. ÉL<br>ARMA LAS PAREJAS.',
+      'how.step3.p': 'Atiende, reserva, cobra y cierra el partido. Vos seguís todo desde un panel limpio.',
+      'form.title': '¿QUERÉS PROBARLO<br>ANTES QUE <em>TODOS?</em>',
+      'form.intro': 'Estamos seleccionando <strong>[CLUBES_AR_TBD] clubes piloto</strong> en Argentina. Condición especial, acompañamiento directo, y vos ayudás a moldear el producto.',
+      'form.perk1': 'Precio de piloto congelado por 12 meses',
+      'form.perk2': 'Setup, entrenamiento de la IA y migración por nuestra cuenta',
+      'form.perk3': 'Línea directa con el equipo fundador',
+      'form.perk4': 'Vos ayudás a definir el roadmap del producto',
+      'form.slots.aria': 'Lugares restantes en el piloto',
+      'form.slots.label': 'LUGARES RESTANTES',
+      'form.slots.counter': '[CLUBES_AR_TBD]',
+      'form.card.title': '// POSTULACIÓN AL PILOTO',
+      'form.status.initial': 'EN ESPERA',
+      'form.field.nome.label': 'TU NOMBRE',
+      'form.field.nome.placeholder': 'Ej.: Tomás Fernández',
+      'form.field.nome.err': 'Completá tu nombre.',
+      'form.field.whats.placeholder': '11 2345-6789',
+      'form.field.whats.err': 'Ingresá un número válido con código de área.',
+      'form.field.clube.label': 'NOMBRE DEL CLUB',
+      'form.field.clube.placeholder': 'Ej.: La Plata Pádel',
+      'form.field.clube.err': 'Ingresá el nombre del club.',
+      'form.field.cidade.label': 'CIUDAD <span style="opacity:.5;text-transform:none;letter-spacing:0">(opcional)</span>',
+      'form.field.cidade.placeholder': 'Ej.: Buenos Aires, Córdoba, Rosario',
+      'form.submit.label': 'ENTRAR A LA LISTA DE PILOTOS',
+      'form.fine': 'TE RESPONDEMOS EN HASTA 24H · TUS DATOS NO VAN A NINGÚN LADO',
+      'form.success.h3': '¡LISTO!<br>NOS LLEGÓ.',
+      'form.success.p': 'Te escribimos por WhatsApp en hasta <strong style="color:#fff">24h</strong>.<br>Ya te abrimos una ventana con el mensaje listo — solo apretá enviar. <span class="ball">🎾</span>',
+      'footer.tag': 'HECHO PARA EL PÁDEL <span>ARGENTINO.</span>',
+      'form.status.sending': 'ENVIANDO',
+      'form.status.received': 'RECIBIDO',
+      'form.submit.sending': 'ENVIANDO...',
+      'form.wa.fallback': 'ABRIR WHATSAPP →'
+    }
+  };
+
+  let currentLang = 'pt';
+
+  function i18nGet(dict, key){
+    if(dict[key] != null) return dict[key];
+    if(I18N.pt[key] != null){ console.warn('[i18n] missing "' + key + '" for current lang — falling back to PT'); return I18N.pt[key]; }
+    console.warn('[i18n] unknown key:', key);
+    return '';
+  }
+
+  function applyLang(lang){
+    if(lang !== 'es' && lang !== 'pt') lang = 'pt';
+    currentLang = lang;
+    const dict = I18N[lang] || I18N.pt;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      el.textContent = i18nGet(dict, el.getAttribute('data-i18n'));
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      el.innerHTML = i18nGet(dict, el.getAttribute('data-i18n-html'));
+    });
+    ['placeholder','aria-label','content','title'].forEach(function(attr){
+      document.querySelectorAll('[data-i18n-attr-' + attr + ']').forEach(function(el){
+        el.setAttribute(attr, i18nGet(dict, el.getAttribute('data-i18n-attr-' + attr)));
+      });
+    });
+    document.documentElement.lang = (lang === 'es') ? 'es-AR' : 'pt-BR';
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+  }
+
+  function detectLang(){
+    try {
+      const saved = localStorage.getItem('saque_lang');
+      if(saved === 'pt' || saved === 'es') return saved;
+    } catch(e){}
+    const navLang = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+    return navLang.indexOf('es') === 0 ? 'es' : 'pt';
+  }
+
+  function setLang(lang){
+    try { localStorage.setItem('saque_lang', lang); } catch(e){}
+    applyLang(lang);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ setLang(btn.getAttribute('data-lang')); });
+  });
+
+  // Apply detected language ASAP. PT is server-rendered → PT visitors get zero repaint.
+  applyLang(detectLang());
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries)=>{
@@ -818,7 +1120,8 @@
     });
   }
 
-  // BR phone mask
+  // Phone mask — BR keeps the strict (DDD) format; ES (Argentina) uses a permissive soft mask
+  // so AR numbers (+54 9 11 ..., 10–13 digits, varied formats) are never silently rejected.
   const whats = document.getElementById('whats');
   function maskPhone(v){
     v = v.replace(/\D/g,'').slice(0,11);
@@ -827,12 +1130,27 @@
     if(v.length<=10) return '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);
     return '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
   }
-  whats.addEventListener('input',(e)=>{e.target.value = maskPhone(e.target.value)});
+  // Soft mask for AR: keep digits + common separators, allow a single leading '+', don't impose any pattern.
+  function maskPhoneAR(v){
+    let cleaned = v.replace(/[^\d+\s()\-]/g,'');
+    cleaned = cleaned.replace(/(?!^)\+/g,''); // only one '+', only at the start
+    return cleaned.slice(0,20);
+  }
+  whats.addEventListener('input',(e)=>{
+    e.target.value = (currentLang === 'es') ? maskPhoneAR(e.target.value) : maskPhone(e.target.value);
+  });
 
-  // Form validation
+  // Phone validation — BR requires 10/11 digits; ES (AR) accepts 8–15 digits (with optional +).
   function validPhone(v){
     const d = v.replace(/\D/g,'');
     return d.length===10 || d.length===11;
+  }
+  function validPhoneAR(v){
+    const d = v.replace(/\D/g,'');
+    return d.length>=8 && d.length<=15;
+  }
+  function isPhoneValid(v){
+    return (currentLang === 'es') ? validPhoneAR(v) : validPhone(v);
   }
 
   // Form submit
@@ -852,7 +1170,7 @@
 
     let ok = true;
     if(!nome.value.trim()){ nome.closest('.field').classList.add('error'); ok=false; }
-    if(!validPhone(whats.value)){ whats.closest('.field').classList.add('error'); ok=false; }
+    if(!isPhoneValid(whats.value)){ whats.closest('.field').classList.add('error'); ok=false; }
     if(!clube.value.trim()){ clube.closest('.field').classList.add('error'); ok=false; }
     // cidade is optional
     if(!ok){
@@ -862,8 +1180,8 @@
     }
 
     submitBtn.disabled = true;
-    submitLabel.textContent = 'ENVIANDO...';
-    formStatus.textContent = 'ENVIANDO';
+    submitLabel.textContent = I18N[currentLang]['form.submit.sending'];
+    formStatus.textContent = I18N[currentLang]['form.status.sending'];
 
     const data = {
       nome: nome.value.trim(),
@@ -875,8 +1193,12 @@
     };
 
     // 1) WhatsApp link — open immediately on click to avoid popup blockers
-    const waMsg = `Olá! Sou ${data.nome} do clube ${data.clube}${data.cidade ? ' em ' + data.cidade : ''}. Quero entrar na lista dos pilotos do Saque.`;
-    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMsg)}`;
+    const waMsg = (currentLang === 'es')
+      ? `¡Hola! Soy ${data.nome} del club ${data.clube}${data.cidade ? ' en ' + data.cidade : ''}. Quiero entrar a la lista de pilotos de Saque.`
+      : `Olá! Sou ${data.nome} do clube ${data.clube}${data.cidade ? ' em ' + data.cidade : ''}. Quero entrar na lista dos pilotos do Saque.`;
+    // AR leads go to the AR number placeholder until Guille wires the real one (see WA_NUMBER_AR).
+    const waTarget = (currentLang === 'es') ? WA_NUMBER_AR : WA_NUMBER;
+    const waUrl = `https://wa.me/${waTarget}?text=${encodeURIComponent(waMsg)}`;
     const waWin = window.open(waUrl, '_blank', 'noopener');
 
     // 2) Send to Formspree (parallel)
@@ -893,13 +1215,13 @@
     // 3) Show success
     document.getElementById('formBody').style.display = 'none';
     document.getElementById('success').classList.add('show');
-    formStatus.textContent = 'RECEBIDO';
+    formStatus.textContent = I18N[currentLang]['form.status.received'];
 
     // Fallback: if popup blocked, give a clickable link in success
     if(!waWin){
       const link = document.createElement('a');
       link.href = waUrl; link.target = '_blank'; link.rel = 'noopener';
-      link.textContent = 'ABRIR WHATSAPP →';
+      link.textContent = I18N[currentLang]['form.wa.fallback'];
       link.style.cssText = 'display:inline-block;margin-top:18px;background:var(--acc);color:#000;padding:12px 18px;border-radius:999px;font-family:Archivo Black,sans-serif;font-size:13px;letter-spacing:.06em';
       document.getElementById('success').appendChild(link);
     }
