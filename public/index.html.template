@@ -817,7 +817,8 @@
 
   // ---- i18n dictionary — PT-BR default (server-rendered) · ES localizado a Argentina (rioplatense) ----
   // TRAMPA envsubst: NUNCA poner ${WA_NUMBER} ni ${FORMSPREE_ENDPOINT} dentro de un value (los inyectaría mid-string).
-  // Hard business data (precio, método de pago, cantidad de clubes/slots) = placeholders [..._AR_TBD] visibles.
+  // Hard business data AR — precio ($5.000), método de pago (Mercado Pago) y clubes/slots (10) ya están seteados en el dict 'es'.
+  // Pendiente antes de publicar ES: WA_NUMBER_AR (arriba) sigue siendo placeholder visible.
   const I18N = {
     pt: {
       'meta.title': 'SAQUE — O agente de IA que arruma as duplas do seu clube de padel',
@@ -940,7 +941,7 @@
       'nav.logo.aria': 'Saque, página de inicio',
       'nav.lang.aria': 'Seleccionar idioma',
       'nav.cta': 'ENTRAR A LA LISTA',
-      'hero.badge.num': '[CLUBES_AR_TBD]',
+      'hero.badge.num': '10',
       'hero.badge.label': 'LUGARES · CLUBES PILOTO · ARGENTINA',
       'hero.h1.l1': 'TU CLUB.',
       'hero.h1.l2': 'TUS <em>CLIENTES</em>.',
@@ -952,7 +953,7 @@
       'hero.stat2.v': 'COMISIÓN POR TURNO. EL CLIENTE ES TUYO.',
       'hero.stat3.v': 'META DE OCUPACIÓN EN HORARIOS MUERTOS.',
       'marquee.item1': 'BUSCA PAREJA EN EL GRUPO',
-      'marquee.item2': 'COBRA LA SEÑA POR [METODO_PAGO_AR_TBD]',
+      'marquee.item2': 'COBRA LA SEÑA POR MERCADO PAGO',
       'marquee.item3': 'CONOCE A CADA JUGADOR',
       'marquee.item4': 'CIERRA EL PARTIDO SOLO',
       'marquee.item5': 'SIN APP DE MÁS',
@@ -978,7 +979,7 @@
       'phone.divider.hoje': 'HOY',
       'phone.bubble1': '¡Hola Carlos! Se abrió un lugar <strong>mañana 19hs</strong>, categoría 5ta. Vos jugás siempre a esa hora con Pedro. ¿Te prendés? 🎾',
       'phone.bubble2': '¡Dale! ¿Vos arreglás con Pedro?',
-      'phone.bubble3': 'Ya le escribí. Se prendió. ¿Les paso la seña por [METODO_PAGO_AR_TBD] a los dos? [PRECIO_AR_TBD] cada uno.',
+      'phone.bubble3': 'Ya le escribí. Se prendió. ¿Les paso la seña por Mercado Pago a los dos? $5.000 cada uno.',
       'phone.bubble4': 'Mandá 🔥',
       'phone.divider.grupo': 'GRUPO · CATEGORÍA 5TA',
       'phone.bubble5': '<strong>Gente de la 5ta:</strong> Marcos y Juan están buscando pareja para el <strong>sábado a las 8</strong>. ¿Quién se suma?',
@@ -988,7 +989,7 @@
       'solution.title': 'TODO LO QUE YA ERA<br>LO <em>BÁSICO.</em>',
       'solution.feat1.h3': 'TURNOS<br>24/7 EN WHATSAPP',
       'solution.feat1.p': 'El cliente manda un mensaje. El Saque mira la agenda, sugiere horario y cierra.',
-      'solution.feat2.h3': 'COBRO DE<br>SEÑA POR [METODO_PAGO_AR_TBD]',
+      'solution.feat2.h3': 'COBRO DE<br>SEÑA POR MERCADO PAGO',
       'solution.feat2.p': 'El turno se confirma solo con la seña paga. Chau a los que cuelgan.',
       'solution.feat3.h3': 'LISTA DE ESPERA<br>INTELIGENTE',
       'solution.feat3.p': '¿Se cayó un turno? El Saque ya se lo ofrece a la lista en segundos.',
@@ -1013,14 +1014,14 @@
       'how.step3.h3': 'VOS RELAJÁS. ÉL<br>ARMA LAS PAREJAS.',
       'how.step3.p': 'Atiende, reserva, cobra y cierra el partido. Vos seguís todo desde un panel limpio.',
       'form.title': '¿QUERÉS PROBARLO<br>ANTES QUE <em>TODOS?</em>',
-      'form.intro': 'Estamos seleccionando <strong>[CLUBES_AR_TBD] clubes piloto</strong> en Argentina. Condición especial, acompañamiento directo, y vos ayudás a moldear el producto.',
+      'form.intro': 'Estamos seleccionando <strong>10 clubes piloto</strong> en Argentina. Condición especial, acompañamiento directo, y vos ayudás a moldear el producto.',
       'form.perk1': 'Precio de piloto congelado por 12 meses',
       'form.perk2': 'Setup, entrenamiento de la IA y migración por nuestra cuenta',
       'form.perk3': 'Línea directa con el equipo fundador',
       'form.perk4': 'Vos ayudás a definir el roadmap del producto',
       'form.slots.aria': 'Lugares restantes en el piloto',
       'form.slots.label': 'LUGARES RESTANTES',
-      'form.slots.counter': '[CLUBES_AR_TBD]',
+      'form.slots.counter': '<em>10</em>/10',
       'form.card.title': '// POSTULACIÓN AL PILOTO',
       'form.status.initial': 'EN ESPERA',
       'form.field.nome.label': 'TU NOMBRE',
